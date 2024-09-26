@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore countries around the world with our comprehensive API. Find information, search for countries, and filter by region. Discover where in the world you want to travel next!"
+    />
+    <meta
+      name="keywords"
+      content="countries, API, search, filter, regions, travel, world"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/image/favicon-32x32.png"
+      sizes="32x32"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./js/control.js" type="module"></script>
+    <title>Rest Countries Api</title>
+  </head>
+  <body>
+    <!-- !========================================================{Header} -->
+    <header id="header" class="header">
+      <nav class="nav">
+        <section class="nav__header">
+          <h1 class="heading-primary">Where in the world?</h1>
+          <figure class="nav__figure" data-display="figure">
+            <!-- ?-----[Mode] -->
+            <div
+              class="nav__mode"
+              data-action="switch"
+              tabindex="0"
+              role="button"
+              aria-label="Toggle dark and light mode"
+            >
+              <!--?----------[moon]  -->
+              <div class="svg svg--moon">
+                <svg aria-label="Icon of the moon" role="img">
+                  <use xlink:href="./assets/image/icon.svg#icon-moon"></use>
+                </svg>
+              </div>
+              <!--?--------------[Sun]  -->
+              <div class="svg svg--sun" role="img">
+                <svg aria-label="Icon of the sun">
+                  <use xlink:href="./assets/image/icon.svg#icon-sun"></use>
+                </svg>
+              </div>
+            </div>
+            <!--?--------------------[Caption]  -->
+            <figcaption class="nav__figure-caption">
+              <h2 class="heading-secondary nav--cation-dark">Dark Mode</h2>
+              <h2 class="heading-secondary nav--cation-light">Light Mode</h2>
+            </figcaption>
+          </figure>
+        </section>
+
+        <a href="#header" class="svg popup" data-display="popup">
+          <svg aria-label="Icon arrow up">
+            <use xlink:href="./assets/image/icon.svg#icon-arrow-down"></use>
+          </svg>
+        </a>
+      </nav>
+      <!--!=================================================[Find]  -->
+      <form class="find" data-display="find">
+        <!--?---------------------------------[Search]  -->
+        <label class="search" for="search">
+          <div class="search__wrapper">
+            <!--search-->
+            <div class="svg svg--search" data-action="search" role="button">
+              <svg aria-label="Icon search">
+                <use xlink:href="./assets/image/icon.svg#icon-search"></use>
+              </svg>
+            </div>
+            <input
+              class="search__input"
+              id="search"
+              type="text"
+              name="search"
+              placeholder="Search for country...."
+              data-input="search"
+            />
+          </div>
+        </label>
+        <!-- ?-------------------------------[Filter] -->
+        <section class="filter-wrapper">
+          <label class="filter" for="filter" data-display="filter">
+            <div class="filter__heading">
+              <h2 class="heading-secondary heading-filter">Filter by Region</h2>
+              <!--Icon-->
+              <div
+                id="filter"
+                class="svg svg--filter"
+                data-action="filter"
+                role="button"
+                tabindex="0"
+              >
+                <svg aria-label="Icon arrow down">
+                  <use
+                    xlink:href="./assets/image/icon.svg#icon-arrow-down"
+                  ></use>
+                </svg>
+              </div>
+            </div>
+            <!--?----------------[Options]-->
+            <div class="filter__body">
+              <ul class="filter__body__list">
+                <li class="heading-item" data-region="africa">Africa</li>
+                <li class="heading-item" data-region="america">America</li>
+                <li class="heading-item" data-region="asia">Asia</li>
+                <li class="heading-item" data-region="europe">Europe</li>
+                <li class="heading-item" data-region="oceania">Oceania</li>
+              </ul>
+            </div>
+          </label>
+        </section>
+      </form>
+    </header>
+    <!--!======================================================{Main}  -->
+    <main class="main">
+      <article class="country" data-display="country-card"></article>
+      <!--!========================================================[Card-Details]  -->
+      <article
+        class="country-details-display hide"
+        data-display="country-details"
+      ></article>
+      <!-- !=======================================================[Error handling] -->
+      <section
+        class="country-not-found is--not-found hide"
+        data-display="not-found"
+        aria-live="polite"
+      >
+        <p class="heading-secondary heading--error">Country Not Found</p>
+      </section>
+    </main>
+
+    <footer class="attribution heading-secondary">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Peter Godspower</a>.
+    </footer>
+  </body>
+</html>
